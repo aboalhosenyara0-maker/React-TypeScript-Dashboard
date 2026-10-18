@@ -43,7 +43,7 @@ const ItemForm = ({setData , oldData} : {setData : Dispatch<SetStateAction<produ
                     <div className="w-[50%] dark:text-amber-50 cursor-pointer border flex justify-center items-center text-center">
                         <label htmlFor="image" className="text-2xl cursor-pointer"> {oldData?.image_url ? <img src={oldData?.image_url} alt=""  className=" ml-6 w-[180px] h-[180px] object-contain"/> :  <img src={upload} alt=""  className="  dark:brightness-0 dark:invert"/>} <br /> upload Product Image</label>
                         <input type="file" name="" id="image" className=" hidden  "
-                        onChange={(event) => data.current ={...data.current , image  :event.target.files?.[0]}}/>
+                        onChange={(event) => data.current ={...data.current , image  :event.target.files?.[0] ?? null}}/>
                     </div>
                 </div>
                 <input type="submit" value={oldData ? "Edite" : "Create"} className="ml-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-blue-400 focus:outline-none rounded-2xl mb-[20px] cursor-pointer border-0 bg-blue-500 p-[16px] w-50 text-amber-50 " />
